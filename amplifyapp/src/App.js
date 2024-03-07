@@ -44,7 +44,7 @@ function App() {
       </Form>
       <div style={{ marginTop: "50px" }}>
         {!isLoading ? (
-          <Image src={url} height={300} width={300} roundedCircle />
+          <Image src={url} height={500} width={500}  />
         ) : (
           <Spinner animation="border" role="status">
             <span className="visually-hidden">Loading...</span>
