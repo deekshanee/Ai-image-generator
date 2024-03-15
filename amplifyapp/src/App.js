@@ -15,12 +15,12 @@ function App() {
     setLoading(true);
     console.log(data);
     const response = await axios.get(
-      `https://44vek2rvvh.execute-api.us-west-2.amazonaws.com/dev/ask?prompt=${data}`
+      `https://44vek2rvvh.execute-api.us-west-2.amazonaws.com/dev/business-bedrock-knowledgebase/ask?prompt=${data}`
     );
 
     console.log(response);
     setLoading(false);
-    setUrl(response.data);
+    setUrl(response.data.body);
   };
   const handleChange = (value) => {
     setData(value);
