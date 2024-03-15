@@ -20,7 +20,7 @@ function App() {
 
     console.log(response);
     setLoading(false);
-    setUrl(response.data.url);
+    setUrl(response.data);
   };
   const handleChange = (value) => {
     setData(value);
@@ -39,12 +39,12 @@ function App() {
         </Form.Group>
 
         <Button variant="info" onClick={handleSubmit}>
-          Create Image
+          Surpise me!!
         </Button>
       </Form>
       <div style={{ marginTop: "50px" }}>
         {!isLoading ? (
-          <Image src={url} height={500} width={500}  />
+          {url}
         ) : (
           <Spinner animation="border" role="status">
             <span className="visually-hidden">Loading...</span>
