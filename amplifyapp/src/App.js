@@ -9,7 +9,7 @@ import Spinner from "react-bootstrap/Spinner";
 
 function App() {
   const [data, setData] = useState();
-  const [url, setUrl] = useState();
+  const [response, setResponse] = useState("");
   const [isLoading, setLoading] = useState(false);
   const handleSubmit = async () => {
     setLoading(true);
@@ -20,7 +20,7 @@ function App() {
 
     console.log(response);
     setLoading(false);
-    setUrl(response.data.body);
+    setResponse(response.data.body);
   };
   const handleChange = (value) => {
     setData(value);
@@ -38,13 +38,13 @@ function App() {
           />
         </Form.Group>
 
-        <Button variant="info" onClick={handleSubmit}>
+        <Button disabled={isLoading} variant="info" onClick={handleSubmit}>
           Surpise me!!
         </Button>
       </Form>
       <div style={{ marginTop: "50px" }}>
         {!isLoading ? (
-          {url}
+          response
         ) : (
           <Spinner animation="border" role="status">
             <span className="visually-hidden">Loading...</span>
