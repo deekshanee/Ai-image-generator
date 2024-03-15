@@ -15,7 +15,7 @@ function App() {
     setLoading(true);
     console.log(data);
     const response = await axios.get(
-      `https://btws72rem7.execute-api.us-east-1.amazonaws.com/dev/image?prompt=${data}`
+      `https://44vek2rvvh.execute-api.us-west-2.amazonaws.com/dev/ask?prompt=${data}`
     );
 
     console.log(response);
@@ -27,7 +27,7 @@ function App() {
   };
   return (
     <div className="App">
-      <h1>Have something in your mind? Let's generate it as image?</h1>
+      <h1>I Can help you to start a good Business :)</h1>
       <Form>
         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
           <Form.Label>What are you thinking of?</Form.Label>
